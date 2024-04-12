@@ -15,11 +15,26 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from .views import hAPIView
+from .views import hAPIView, TaskViewSet
 from django.urls import include, path
 
-urlpatterns = [
-    path("", include("accounts.urls")),
-    path('api/', hAPIView.as_view(), name='hello_world'),
+# import routers 
+from rest_framework import routers 
+  
 
+  
+# define the router 
+router = routers.DefaultRouter() 
+  
+# define the router path and viewset to be used 
+router.register(r'task', TaskViewSet) 
+from .utils import getTaskList
+# specify URL Path for rest_framework 
+urlpatterns = [ 
+    path('', include(router.urls)), 
+    path('api-auth/', include('rest_framework.urls')),
+    path('api/', hAPIView.as_view(), name='hello_world'),
+    path('', getTaskList, name='routes'),
 ]
+
+

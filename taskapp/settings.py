@@ -34,6 +34,11 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # Application definition
 
+# APPLICATIon JWT AUTHORIZATION
+
+# TODO: install django JWT AUTH
+
+
 #TODO: Add Debug System
 
 INSTALLED_APPS = [
@@ -44,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+  # FIXME: JWT  'rest_framework_simplejwt.token_blacklist',
     'accounts', # Department Users Accounts
     'tasks', # Task List APP 
     #TODO: department List for Task to be Categorized

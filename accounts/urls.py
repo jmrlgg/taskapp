@@ -5,9 +5,9 @@ from .views import home
 
 
 urlpatterns = [
-
+       
     path('accounts/', include('django.contrib.auth.urls')),
-    #path('api/', admin.site.urls),
+    path('admin/', admin.site.urls),
     
 
 ]
