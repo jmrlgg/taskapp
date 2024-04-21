@@ -2,6 +2,7 @@ from django.core import serializers
 from rest_framework import exceptions, serializers
 from .models import TaskModel
 
+# RETRIEVE TASK PER FIELDS LISTED 
 class TaskModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = TaskModel

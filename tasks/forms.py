@@ -2,7 +2,7 @@
 from django.forms import forms, ModelForm
 from .models import TaskModel
 
-
+#Create TaskModel Form Recieve
 class TaskCreationForm(ModelForm):
     
     class Meta:
@@ -10,7 +10,7 @@ class TaskCreationForm(ModelForm):
         fields = "__all__"
     
 
-        
+       # UPDATE TASK MODEL
 class TaskUpdateForm(ModelForm):
     
     class Meta:

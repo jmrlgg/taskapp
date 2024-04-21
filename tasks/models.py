@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-
+# TASKMODEL 
 class TaskModel(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
@@ -14,7 +14,7 @@ class TaskModel(models.Model):
 
     def __unicode__(self):
         return self.title
-    
+    # ADMIN PANEL VIEW
     def report_model_name(self, instance):
         short_description = 'Task Model Management'
 #TODO: TASK MODEL TO FINSIH
@@ -29,7 +29,7 @@ class TaskModel(models.Model):
     #children = models.ManyToManyField('self', blank=True, related_name='children')
 
 
-    
+    # META TABLE 
     class Meta:
         ordering = ['-created_at']
         verbose_name = 'Task'
