@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/labeler@v5
-      
+
 # Add 'root' label to any root file changes
 # Quotation marks are required for the leading asterisk
 root:
@@ -63,3 +63,6 @@ root:
   # Add 'release' label to any PR that is opened against the `main` branch
   release:
    - base-branch: 'main'
+
+  staging:
+    -staging-branch: 'staging'
