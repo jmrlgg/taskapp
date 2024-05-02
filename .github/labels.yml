@@ -45,5 +45,5 @@
   color: "d876e3"
   description: "Further information is requested"
 - name: "wontfix"
-  color: "ffffff"
+  color: "purple"
   description: "This will not be worked on"
