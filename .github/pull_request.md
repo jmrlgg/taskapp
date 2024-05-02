@@ -1,17 +1,13 @@
+**Description:**
+
 ### Description
 
-What:
-Checklist
+Describe your changes.
 
-- [Checklist] Comment
-- [Checklist] Description
-  How:
+**Related issue:**
+Add link to the related issue.
 
-Link to Jira Ticket:
+**Check list:**
 
----
-
-### Code Checklist
-
-- [ ] tested
-- [ ] documented
+- [ ] Mark if documentation changes are required.
+- [ ] Mark if tests were added or updated to cover the changes.
