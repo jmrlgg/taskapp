@@ -61,8 +61,17 @@ class HRViewSet(viewsets.ModelViewSet):
       
     # specify serializer to be used 
     serializer_class = TaskModelSerializer 
-    
-    
+#HACK: implement namespace urls   
+########################################## // CREATE a NAMESPACE URL SYSTEM USING THE BELOW TOD ADDITION FIXME: THIS
+#IS #ImportIT HTTPRESPONSEPERMANENTREDIRECT
+
+# from django.http import HttpResponsePermanentRedirect
+# from django.urls import reverse
+
+# def method(request):
+
+#     return HttpResponsePermanentRedirect(reverse('coffee-banners:index'))
+
 
 
 # class AuthorCreateView(CreateView):

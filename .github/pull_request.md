@@ -1,8 +1,11 @@
 ### Description
 
 What:
+Checklist
 
-How:
+- [Checklist] Comment
+- [Checklist] Description
+  How:
 
 Link to Jira Ticket:
 

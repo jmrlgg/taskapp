@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from .models import TaskModel
 # Import Serializer
 from .serializers import TaskModelSerializer
-
+from django.http import HttpResponse
 
 # Return Task List
 def getTaskList(request):
@@ -12,16 +12,20 @@ def getTaskList(request):
     # Serialize Task List
     serializer = TaskModelSerializer(taskList, many=True)
     # Return Task List
-    return Response(serializer.data)
+    return HttpResponse(serializer.data)
 
-
+#IMPORT JSON
+import json
 # Return     Task Detail
 def getTaskDetail(request):
     # Get Task Detail
     taskDetail = TaskModel.objects.all()
+    
     # Serialize Task Detail
     serializer = TaskModelSerializer(taskDetail, many=True)
-    # Return Task Detail
+    # Return Task Detail JSON Serializer
+    serializer_data = serializer.data
+    json_data = json.dumps(serializer_data) 
     return Response(serializer.data)
 
 

@@ -37,6 +37,7 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('api/', hAPIView.as_view(), name='hello_world'),
     path('tasks/', getTaskList, name='routes'),
+    path('taskd/', getTaskList, name='routess'),
     path('ts/', TaskList.as_view(), name='')
 ]
 
