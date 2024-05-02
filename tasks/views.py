@@ -22,8 +22,9 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 
 # import local data 
-from .serializers import TaskModelSerializer 
+from .serializers import TaskModelSerializer, Task2ModelSerializer
 from .models import TaskModel 
+from rest_framework.renderers import TemplateHTMLRenderer
 
 class hAPIView(APIView):
     def get(self, request):
@@ -33,11 +34,44 @@ class hAPIView(APIView):
 class TaskViewSet(viewsets.ModelViewSet): 
     # define queryset 
     queryset = TaskModel.objects.all() 
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = 'task_list.html'
+    # specify serializer to be used 
+    serializer_class = TaskModelSerializer 
+    def get(self, request):
+        queryset = TaskModel.objects.all()
+        return Response({'tasks': queryset})
+    
+class TaskList(APIView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = 'task_list.html'
+
+    def get(self, request):
+        queryset = TaskModel.objects.all()
+        return Response({'tasks': queryset})
+class SalesViewSet(viewsets.ModelViewSet): 
+    # define queryset 
+    queryset = TaskModel.objects.filter(tags__contains="sales") 
+      
+    # specify serializer to be used 
+    serializer_class = Task2ModelSerializer 
+class HRViewSet(viewsets.ModelViewSet): 
+    # define queryset 
+    queryset = TaskModel.objects.filter(tags__contains="hr") 
       
     # specify serializer to be used 
     serializer_class = TaskModelSerializer 
-    
-    
+#HACK: implement namespace urls   
+########################################## // CREATE a NAMESPACE URL SYSTEM USING THE BELOW TOD ADDITION FIXME: THIS
+#IS #ImportIT HTTPRESPONSEPERMANENTREDIRECT
+
+# from django.http import HttpResponsePermanentRedirect
+# from django.urls import reverse
+
+# def method(request):
+
+#     return HttpResponsePermanentRedirect(reverse('coffee-banners:index'))
+
 
 
 # class AuthorCreateView(CreateView):

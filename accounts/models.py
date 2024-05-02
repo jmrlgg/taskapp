@@ -7,6 +7,6 @@ from django.contrib.auth.models import AbstractUser
 
 
 class CustomUser(AbstractUser):
-    # cover_photo = models.ImageField(upload_to='covers/', null=True, blank=True)
+    cover_photo = models.ImageField(upload_to='covers/', null=True, blank=True)
     bio = models.CharField(max_length=255, blank=True)
     pass

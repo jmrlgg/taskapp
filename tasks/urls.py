@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from .views import hAPIView, TaskViewSet
+from .views import hAPIView, TaskViewSet, SalesViewSet, HRViewSet, TaskList
 from django.urls import include, path
 
 # import routers 
@@ -27,14 +27,18 @@ from rest_framework import routers
 router = routers.DefaultRouter() 
   
 # define the router path and viewset to be used 
-router.register(r'task', TaskViewSet) 
+router.register(r'task', TaskViewSet, basename="task")
+router.register(r'sales', SalesViewSet, basename="sales") 
+router.register(r'hr', HRViewSet, basename="hr") 
 from .utils import getTaskList
 # specify URL Path for rest_framework 
 urlpatterns = [ 
     path('', include(router.urls)), 
     path('api-auth/', include('rest_framework.urls')),
     path('api/', hAPIView.as_view(), name='hello_world'),
-    path('', getTaskList, name='routes'),
+    path('tasks/', getTaskList, name='routes'),
+    path('taskd/', getTaskList, name='routess'),
+    path('ts/', TaskList.as_view(), name='')
 ]
 
 

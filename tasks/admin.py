@@ -13,6 +13,7 @@ class TaskModelAdmin(admin.ModelAdmin):
     model = TaskModel
     list_display = [
         'title', 
+        'tags',
         'description', 
         'priority',
         'assigned_to',
@@ -21,12 +22,37 @@ class TaskModelAdmin(admin.ModelAdmin):
         'completed',
 
     ]
+    list_display_links = [
+        'title', 
+
+    ]
     list_filter = [
         'priority',
         'assigned_to',
         'due_date',
         'completed',
     ]
+    list_editable = ( 
+        'tags',
+        'description', 
+        'priority',
+        'assigned_to',
+        'due_date', 
+        'completed',
+
+    )
+    search_fields = (
+        'title', 
+        'assigned_to',
+        'due_date',
+        'completed',
+        'tags',
+    )
+    # prepopulated_fields = {
+    #     "slug": (
+    #         "title",
+    #         "subtitle",
+    #     )
     #list_display = ('title', 'created_by', 'display_genre')
 # def display_department(self):
 #     """Create a string for the Genre. This is required to display genre in Admin."""
