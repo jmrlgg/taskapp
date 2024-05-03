@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+*.sqlite3
 # C extensions
 *.so
 
@@ -82,11 +83,12 @@ target/
 profile_default/
 ipython_config.py
 
-
 __pycache__/
-*./__pycache__/
+.__pycache__/
+*.__pycache__/
 *__pycache__
 
+.__pycache__
 
 # local env files
 .env.local
