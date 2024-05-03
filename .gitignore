@@ -84,14 +84,14 @@ ipython_config.py
 
 
 __pycache__/
-*__pycache__/
+*./__pycache__/
 *__pycache__
 
 
 # local env files
 .env.local
 .env.*.local
-/taskenv
+*./taskenv
 .taskenv
 
 
