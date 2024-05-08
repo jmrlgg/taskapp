@@ -1,8 +1,8 @@
-name: Daily Contributions
+name: Daily Contribution
 
 on:
   schedule:
-    - cron: "36 15 * * 1-5"
+    - cron: "00 17 * * 1-5"
 
 jobs:
   make-contribution:
