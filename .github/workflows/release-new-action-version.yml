@@ -5,8 +5,8 @@ on:
     types: [released]
   workflow_dispatch:
     inputs:
-      TAG_NAME:
-        description: "Tag name that the major tag will point to"
+      TAG_NAME: 
+        description: "NEW RELEASE"
         required: true
 
 env:
