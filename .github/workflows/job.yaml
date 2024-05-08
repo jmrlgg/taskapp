@@ -2,11 +2,15 @@ name: Daily Contributions
 
 on:
   schedule:
-    - cron: "30 14 * * 1-5"
+    - cron: "36 15 * * 1-5"
 
 jobs:
   make-contribution:
     runs-on: ubuntu-latest
+
+    permissions:
+          issues: write
+          pull-requests: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
